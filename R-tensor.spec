@@ -4,13 +4,13 @@
 #
 Name     : R-tensor
 Version  : 1.5
-Release  : 13
+Release  : 14
 URL      : https://cran.r-project.org/src/contrib/tensor_1.5.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/tensor_1.5.tar.gz
 Summary  : Tensor product of arrays
 Group    : Development/Tools
 License  : GPL-2.0+
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
 product of the arrays collapsed in specific extents by summing
@@ -24,11 +24,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1521212090
+export SOURCE_DATE_EPOCH=1552801324
 
 %install
+export SOURCE_DATE_EPOCH=1552801324
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1521212090
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -63,8 +63,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library tensor|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  tensor || :
 
 
 %files
