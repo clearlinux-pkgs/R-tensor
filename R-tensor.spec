@@ -4,7 +4,7 @@
 #
 Name     : R-tensor
 Version  : 1.5
-Release  : 31
+Release  : 32
 URL      : https://cran.r-project.org/src/contrib/tensor_1.5.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/tensor_1.5.tar.gz
 Summary  : Tensor product of arrays
